@@ -1,0 +1,44 @@
+#server:
+#  port: 8081
+#  servlet:
+#    context-path: /
+
+# 数据库
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    schema: classpath:db/schema-h2.sql
+    data: classpath:db/data-h2.sql
+    url: jdbc:h2:mem:test
+    username: root
+    password: test
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    url: jdbc:oracle:thin:@192.168.137.1:1521:orcl
+#    driver-class-name: oracle.jdbc.OracleDriver
+#    username: ajlab
+#    password: ajlab
+#    druid:
+#      initial-size: 5
+#      max-active: 20
+#      min-idle: 10
+#      max-wait: 10
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+#    serialization:
+#      write-dates-as-timestamps: false
+
+#mybatis-plus:
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    auto-mapping-behavior: full
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  mapper-locations: classpath*:mapper/**/*Mapper.xml
+#  global-config:
+#    # 逻辑删除配置
+#    db-config:
+#      # 删除前
+#      logic-not-delete-value: 1
+#      # 删除后
+#      logic-delete-value: 0
