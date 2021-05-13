@@ -4,6 +4,7 @@ import com.ajayhao.seed.entity.OrgInfoEntity;
 import com.ajayhao.seed.entity.UserInfoEntity;
 import com.ajayhao.seed.mapper.OrgInfoMapper;
 import com.ajayhao.seed.mapper.UserMapper;
+import com.ajayhao.seed.service.OrgService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.junit.Assert;
 import org.junit.Test;
@@ -22,7 +23,7 @@ public class SeedApplicationTests {
     private UserMapper userMapper;
 
     @Autowired
-    private OrgInfoMapper orgInfoMapper;
+    private OrgService orgService;
 
     @Test
     public void testSelect() {
@@ -36,9 +37,7 @@ public class SeedApplicationTests {
     @Test
     public void testSelectByWrapper() {
         System.out.println(("----- select by wrapper test ------"));
-        QueryWrapper<OrgInfoEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("ORG_ID", 3);
-        List<OrgInfoEntity> orgInfoEntities = orgInfoMapper.selectList(queryWrapper);
+        List<OrgInfoEntity> orgInfoEntities = orgService.queryOrgList();
         Assert.assertEquals(1, orgInfoEntities.size());
         orgInfoEntities.forEach(System.out::println);
     }
