@@ -1,12 +1,14 @@
-package com.ajayhao.seed.mapper;
+package com.ajayhao.seed.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
  * @author AjayHao
  */
 @Data
-public class UserInfo {
+@TableName("user_info")
+public class UserInfoEntity {
     private Long id;
     private String name;
     private Integer age;

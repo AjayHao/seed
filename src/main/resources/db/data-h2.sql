@@ -6,3 +6,13 @@ INSERT INTO user_info (id, name, age, email) VALUES
 (3, 'Tom', 28, 'test3@baomidou.com'),
 (4, 'Sandy', 21, 'test4@baomidou.com'),
 (5, 'Billie', 24, 'test5@baomidou.com');
+
+
+DELETE FROM org_info;
+
+INSERT INTO org_info (org_id, org_name) VALUES
+(1, '公司1'),
+(2, 'Company2'),
+(3, '3333'),
+(4, '的发射点发大水发放的'),
+(5, '5@');
